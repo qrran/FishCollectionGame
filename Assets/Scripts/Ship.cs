@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
-	FishCollector fishInSceen;
+	FishCollector fishInScene;
 
 	GameObject targetFish;
 
@@ -12,28 +12,32 @@ public class Ship : MonoBehaviour
 
 	Rigidbody2D rdbd;
 
+	BoxCollider2D collider2D;
+
 	// Start is called before the first frame update
 	void Start()
 	{
-		fishInSceen = Camera.main.GetComponent<FishCollector>();
+		fishInScene = Camera.main.GetComponent<FishCollector>();
 		rdbd = GetComponent<Rigidbody2D>();
+		collider2D = GetComponent<BoxCollider2D>();
 
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
+		OnMouseDown();
 	}
 
 	void OnMouseDown()
 	{
-
+		if(targetFish != null)
+			Destroy(targetFish);
 	}
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-
+		targetFish = other.gameObject;
 	}
 }
 
