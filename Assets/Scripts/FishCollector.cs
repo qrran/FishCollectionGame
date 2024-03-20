@@ -18,12 +18,10 @@ public class FishCollector : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-
-		//after get right click from mouse
-		if (Input.GetMouseButtonDown(1))
+		
+		//I'm putting(0) Left Click here because my mac mouse doesn't react to right click after tested several times
+		if (Input.GetMouseButtonDown(0))
 		{
-			Debug.Log("mouse pressed");
 			// calculate world position of mouse click
 			Vector3 mousePosition = Input.mousePosition;
 			mousePosition.z = -Camera.main.transform.position.z;
