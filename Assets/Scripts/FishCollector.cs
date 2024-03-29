@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class FishCollector : MonoBehaviour
 {
@@ -18,23 +20,44 @@ public class FishCollector : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
-		//I'm putting(0) Left Click here because my mac mouse doesn't react to right click after tested several times
+		//(0) Left Click
 		if (Input.GetMouseButtonDown(0))
 		{
-			// calculate world position of mouse click
-			Vector3 mousePosition = Input.mousePosition;
-			mousePosition.z = -Camera.main.transform.position.z;
-			Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-			//create a new fish
-			fish = Instantiate<GameObject>(prefabFish);
-			Debug.Log("fish instantiated.");
-			//get the positoin of fish
-			fish.transform.position = worldPosition;
-			fishList.Add(fish);
-			Debug.Log("fish added");
+			SpawnFish();
 		}
 	}
 
-}
+	void SpawnFish()
+	{
+		//get mouseInput position
+		Vector3 mousePosition = Input.mousePosition;
+		mousePosition.z = -Camera.main.transform.position.z;
+		//world space is the position of an object in the overall space of unity
+		Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+		//create a new fish
+		fish = Instantiate<GameObject>(prefabFish);
+		//assign worldPosition to fish
+		fish.transform.position = worldPosition;
+		//add fish to the list 
+		AddFish(fish);
+		Debug.Log("Fish position: " + fish.transform.position);
+	}
 
+	//current fish in the list
+	public List<GameObject> FishList()
+	{
+		return fishList;
+	}
+
+	public void AddFish(GameObject fish)
+	{
+		fishList.Add(fish);
+		Debug.Log("fish added");
+
+	}
+	public void RemoveFish(GameObject fish)
+	{
+		fishList.Remove(fish);
+		Debug.Log("Fish removed from the list.");
+	}
+}
