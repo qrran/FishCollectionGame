@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public abstract class Fish : MonoBehaviour
 {
-    //regular fish has 1 point each
-    int pointValue = 1;
-    GameObject fish;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    protected static int score = 0;
+    public GameObject fish;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected HUD hud;
 
-    int PointValue()
-    {
-        return pointValue;
-    }
+	private void Start()
+	{
+		hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+	}
 
-    public void destroyFish()
-    {
-        Destroy(gameObject);
-    }
+	public abstract void DestroyFish();
+
+    public abstract int FishScore();
 }

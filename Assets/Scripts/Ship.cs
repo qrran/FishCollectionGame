@@ -16,6 +16,7 @@ public class Ship : MonoBehaviour
 	Vector2 direction;
 
 	Rigidbody2D rgbd;
+	//random fish?
 
 
 	// Start is called before the first frame update
@@ -57,11 +58,17 @@ public class Ship : MonoBehaviour
 	{
 		if (targetFish == other.gameObject)
 		{
+			Fish fish = other.GetComponent<Fish>();
+			if (fish != null)
+			{
+				fish.DestroyFish();
+			}
 			fishCollector.RemoveFish(targetFish);
 			Debug.Log("current fish in the list:" + fishCollector.FishList().Count);
-			Destroy(targetFish);
+			Debug.Log("current score: " + fish.FishScore());
 			rgbd.velocity = new Vector2(0, 0);
 			OnMouseDown();
+
 		}
 	}
 }

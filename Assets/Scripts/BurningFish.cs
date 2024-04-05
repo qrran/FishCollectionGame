@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-public class BurningFish : Fish
+public class BurningFish : AnimatedFish
 {
 	[SerializeField] GameObject prefabBurningFish;
 
+	float Burningseconds;
+
 	Timer burningTimer;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
+	public override void DestroyFish()
+	{
+		Destroy(prefabAnimation);
+		Debug.Log("Animated Fish destroyed.");
+		score += 3;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+	public override int FishScore()
+	{
+		return score;
+	}
 }
