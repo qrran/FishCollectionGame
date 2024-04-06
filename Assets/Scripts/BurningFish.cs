@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
 public class BurningFish : AnimatedFish
 {
-	[SerializeField] GameObject prefabBurningFish;
+	private Animator fire;
 
-	float Burningseconds;
+	float burningSeconds = 2f;
 
-	Timer burningTimer;
+	void Start()
+	{
+		// Get reference to the Animator component
+		fire = GetComponent<Animator>();
+		fire.enabled = false;
+	}
 
 	public override void DestroyFish()
 	{
-		Destroy(prefabAnimation);
-		Debug.Log("Animated Fish destroyed.");
+		fire.enabled = true;
 		score += 3;
-
+		Destroy(gameObject, burningSeconds);
+		Debug.Log("Animated Fish destroyed.");
 	}
+
 
 	public override int FishScore()
 	{

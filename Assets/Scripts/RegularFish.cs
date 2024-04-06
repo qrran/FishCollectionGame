@@ -6,10 +6,9 @@ public class RegularFish : Fish
 {
 	public override void DestroyFish()
 	{
+		score += 1;
 		Destroy(gameObject);
 		Debug.Log("Regular Fish destroyed.");
-		score += 1;
-
 	}
 	public override int FishScore()
 	{

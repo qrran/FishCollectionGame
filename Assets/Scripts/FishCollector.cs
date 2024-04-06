@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FishCollector : MonoBehaviour
 {
-	[SerializeField] GameObject prefabFish;
+	[SerializeField] GameObject[] fishPrefabs;
 
 	GameObject fish;
 
@@ -34,13 +34,16 @@ public class FishCollector : MonoBehaviour
 		mousePosition.z = -Camera.main.transform.position.z;
 		//world space is the position of an object in the overall space of unity
 		Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-		//create a new fish
-		fish = Instantiate<GameObject>(prefabFish);
+
+		GameObject randomFishPrefab = fishPrefabs[UnityEngine.Random.Range(0, fishPrefabs.Length)];
+
+		//instantiate random fish
+		fish = Instantiate<GameObject>(randomFishPrefab, worldPosition, Quaternion.identity);
 		//assign worldPosition to fish
 		fish.transform.position = worldPosition;
 		//add fish to the list 
 		AddFish(fish);
-		Debug.Log("Fish position: " + fish.transform.position);
+		//Debug.Log("Fish position: " + fish.transform.position);
 	}
 
 	//current fish in the list

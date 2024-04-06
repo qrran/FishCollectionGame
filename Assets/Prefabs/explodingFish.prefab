@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6429068165935302547
+--- !u!1 &9075090735745264798
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7860950683183442428}
-  - component: {fileID: 5781664009614256451}
-  - component: {fileID: 8058912283948796553}
-  - component: {fileID: 6588509076591282047}
-  - component: {fileID: 7540589708598450941}
+  - component: {fileID: 4480326572074819011}
+  - component: {fileID: 8850013347400282008}
+  - component: {fileID: 5850634542310249406}
+  - component: {fileID: 8782128618918791763}
+  - component: {fileID: 7648729678526559495}
   m_Layer: 0
-  m_Name: burningFish
+  m_Name: explodingFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7860950683183442428
+--- !u!4 &4480326572074819011
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429068165935302547}
+  m_GameObject: {fileID: 9075090735745264798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7496, y: -1.9771, z: 0}
-  m_LocalScale: {x: 0.9417662, y: 0.94817686, z: 1}
+  m_LocalPosition: {x: -5.720514, y: -1.9512656, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5781664009614256451
+--- !u!212 &8850013347400282008
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429068165935302547}
+  m_GameObject: {fileID: 9075090735745264798}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -87,13 +87,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8058912283948796553
+--- !u!58 &5850634542310249406
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429068165935302547}
+  m_GameObject: {fileID: 9075090735745264798}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -122,32 +122,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6588509076591282047
+--- !u!114 &8782128618918791763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429068165935302547}
+  m_GameObject: {fileID: 9075090735745264798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d122807340d143a398d5f36ac565e35, type: 3}
+  m_Script: {fileID: 11500000, guid: 8946caa470c394d089f5604624b8338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 4365476334023416472, guid: 6d5916b7676ec4d9aac9e3e316cee8d5, type: 3}
-  prefabAnimation: {fileID: 157872, guid: 937e9135f2aa4e044a1ba73e2e9f8205, type: 3}
-  prefabBurningFish: {fileID: 6429068165935302547}
---- !u!95 &7540589708598450941
+  prefabAnimation: {fileID: 161472, guid: 15998fa63483e1f4b848b946834b39ef, type: 3}
+  prefabExplodingFish: {fileID: 9075090735745264798}
+--- !u!95 &7648729678526559495
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429068165935302547}
+  m_GameObject: {fileID: 9075090735745264798}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 845205deb6fea411ca4202f39a6b2bda, type: 2}
+  m_Controller: {fileID: 9100000, guid: dd3f6e418ec914fab926536b34581e74, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

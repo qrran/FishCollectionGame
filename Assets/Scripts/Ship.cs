@@ -64,7 +64,7 @@ public class Ship : MonoBehaviour
 				fish.DestroyFish();
 			}
 			fishCollector.RemoveFish(targetFish);
-			Debug.Log("current fish in the list:" + fishCollector.FishList().Count);
+
 			Debug.Log("current score: " + fish.FishScore());
 			rgbd.velocity = new Vector2(0, 0);
 			OnMouseDown();
